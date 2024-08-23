@@ -17,6 +17,18 @@ shebang机制
 
 
 
+### 脚本总结
+
+- 查看系统信息
+
+~~~
+#!/bin/bash
+lscpu | sed -nE 's/^Model name: +(.*)/\1/p'
+head -n1 /proc/meminfo
+lsblk /dev/vda | grep "^vda" | tr -s " "| cut -d " " -f4
+cat /etc/os-release  | sed -nr "s/^NAME=\"(.*)\"/\1/p"
+~~~
+
 
 
 
